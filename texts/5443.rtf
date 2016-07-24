@@ -1,0 +1,61 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 1. Outputs\
+\
+output_int_as_string - add caml_ml_output_int_as_string to byterun/io.c\
+output_float_as_string - add caml_ml_output_float_as_string to byterun/io.c\
+output_bool_as_string - trival to implement in ML\
+\
+Then add the three functions above to Pervasives.\
+\
+2. Inputs\
+\
+bool_of_substring : simple\
+int_of_substring : need to modify / write byterun/ints.c\
+float_of_substring : looks like it\'92s already implemented in byterun/floats.c\
+\
+Add the three functions above to Pervasives\
+\
+Buffer.to_bool\
+Buffer.to_string\
+Buffer.to_float\
+\
+Add these simple functions to Buffer\
+\
+3. Motivating example, and byte code and native code benchmarks\
+\
+\
+STAGE A\
+=======\
+\
+Get all machinery in place (buffer/pervasives in/pervasives out) \
+\
+STAGE B\
+=======\
+\
+Implement the fast versions\
+\
+STAGE C\
+=======\
+\
+Clean up & make patches\
+\
+\
+FILES MODIFIED\
+=============\
+\
+STAGE A:\
+stdlib/pervasives.ml\
+stdlib/pervasives.mli\
+otherlibs/threads/pervasives.ml\
+stdlib/buffer.ml\
+stdlib/buffer.mli\
+\
+STAGE B:\
+byterun/io.c\
+byterun/io.h\
+}

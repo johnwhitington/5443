@@ -1,0 +1,67 @@
+Integers "1234"
+
+feast:5443 john$ ./test 1000000 >/dev/null
+start...end. 0.446272
+feast:5443 john$ ./test 10000000 >/dev/null
+start...end. 4.720522
+feast:5443 john$ ./test 100000000 >/dev/null
+start...end. 48.651136
+feast:5443 john$ ./test 1000000000 >/dev/null
+start...end. 1480.918810
+
+
+Floats "1234."
+
+feast:5443 john$ ./test 1000000 >/dev/null
+start...end. 0.667812
+feast:5443 john$ ./test 10000000 >/dev/null
+start...end. 6.832242
+feast:5443 john$ ./test 100000000 >/dev/null
+start...end. 69.340929
+feast:5443 john$ ./test 1000000000 >/dev/null
+start...end. 1549.873991
+
+Bools "false"
+
+feast:5443 john$ ./test 1000000 >/dev/null
+start...end. 0.199094
+feast:5443 john$ ./test 10000000 >/dev/null
+start...end. 2.331106
+feast:5443 john$ ./test 100000000 >/dev/null
+start...end. 25.216009
+feast:5443 john$ ./test 1000000000 >/dev/null
+start...end. 1091.042810
+
+Strings "foooo"
+
+feast:5443 john$ ./test 1000000 >/dev/null
+start...end. 0.203099
+feast:5443 john$ ./test 10000000 >/dev/null
+start...end. 2.325996
+feast:5443 john$ ./test 100000000 >/dev/null
+start...end. 24.385542
+feast:5443 john$ ./test 1000000000 >/dev/null
+start...end. 1085.771484
+
+(So, even worse with plain strings which are already in memory!)
+
+feast:5443 john$ time ./testc 1000000 string >/dev/null
+
+real	0m0.243s
+user	0m0.235s
+sys	0m0.004s
+feast:5443 john$ time ./testc 10000000 string >/dev/null
+
+real	0m2.436s
+user	0m2.418s
+sys	0m0.008s
+feast:5443 john$ time ./testc 100000000 string >/dev/null
+
+real	0m24.596s
+user	0m24.046s
+sys	0m0.056s
+feast:5443 john$ time ./testc 1000000000 string >/dev/null
+
+real	3m49.385s (=229 seconds)
+user	3m48.334s
+sys	0m0.191s
