@@ -32,8 +32,16 @@ let _ =
       Printf.eprintf "start...";
       flush stderr;
       let t = Unix.gettimeofday () in
-      data_to_channel stdout (testdata (int_of_string n));
+      (*data_to_channel stdout (testdata (int_of_string n));*)
+      let o = output_string stdout in
+      for x = 1 to int_of_string n do
+        o "1234 "
+      done;
       let t' = Unix.gettimeofday () in 
       Printf.eprintf "end. %f\n" (t' -. t);
       flush stderr
   | _ -> failwith "Bad input" 
+
+
+(* Fastest possible Ocaml *)
+(*let _ =*)

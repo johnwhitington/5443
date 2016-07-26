@@ -4,13 +4,14 @@
 
 int main (int argc, char *argv[])
 {
+  static const char my_text[] =  "1234 ";
   if (argc > 2)
   {
     int count = atoi(argv[1]);
     char *string = argv[2];
     for (int c = 0; c < count; c++)
     {
-      printf("%i ", 1234);
+      fwrite(my_text, 1, 5, stdout);
     }
   }
   else

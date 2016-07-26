@@ -65,3 +65,64 @@ feast:5443 john$ time ./testc 1000000000 string >/dev/null
 real	3m49.385s (=229 seconds)
 user	3m48.334s
 sys	0m0.191s
+
+
+Just Puts "1234 "
+
+feast:5443 john$ time ./testc 1000000 bool >/dev/null
+
+
+real	0m0.144s
+user	0m0.124s
+sys	0m0.005s
+feast:5443 john$ time ./testc 10000000 bool >/dev/null
+
+real	0m1.267s
+user	0m1.191s
+sys	0m0.011s
+feast:5443 john$ time ./testc 100000000 bool >/dev/null
+
+real	0m12.296s
+user	0m12.048s
+sys	0m0.053s
+feast:5443 john$ time ./testc 1000000000 bool >/dev/null
+
+real	2m0.142s
+user	1m58.110s
+sys	0m0.418s
+
+fwrite "1234 "
+
+
+feast:5443 john$ time ./testc 1000000 bool >/dev/null
+
+real	0m0.124s
+user	0m0.108s
+sys	0m0.004s
+feast:5443 john$ time ./testc 10000000 bool >/dev/null
+
+real	0m1.100s
+user	0m1.061s
+sys	0m0.008s
+feast:5443 john$ time ./testc 100000000 bool >/dev/null
+
+real	0m10.934s
+user	0m10.734s
+sys	0m0.038s
+feast:5443 john$ time ./testc 1000000000 bool >/dev/null
+
+real	1m48.793s (=108.7s)
+user	1m46.908s
+sys	0m0.351s
+
+Ocaml output fixed string "1234 "
+
+feast:5443 john$ ./test 1000000 >/dev/null
+start...end. 0.033417
+feast:5443 john$ ./test 10000000 >/dev/null
+start...end. 0.323443
+feast:5443 john$ ./test 100000000 >/dev/null
+start...end. 3.190033
+feast:5443 john$ ./test 1000000000 >/dev/null
+start...end. 31.752065
+
